@@ -32,9 +32,11 @@ func _physics_process(delta: float) -> void:
 	
 	if sliding:
 		$Sprite.animation = "slide"
+		if on_floor:
+			$Sprite.rotation = atan2(normal.y,normal.x)+PI/2.0
 	else:
 		$Sprite.animation = "sprint" if abs(velocity.x) > 90.0 else "idle"
-
+		$Sprite.rotation = 0.0
 	
 	var allow_move = false
 	if velocity.x < -max_move_speed:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bag4re4t62vha"]
+[gd_scene load_steps=35 format=4 uid="uid://bag4re4t62vha"]
 
 [ext_resource type="PackedScene" uid="uid://c6m7sk3kvxx4i" path="res://player.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_5hph3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="6_gyffv"]
 [ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="9_ggavl"]
 [ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="10_ubhxj"]
+[ext_resource type="PackedScene" uid="uid://di7o3qc56mehu" path="res://coin.tscn" id="12_27bay"]
 
 [sub_resource type="Resource" id="Resource_27bay"]
 script = ExtResource("3_j7kpp")
@@ -168,3 +169,39 @@ visible = false
 polygon = PackedVector2Array(-44.934364, 53.475483, 141.81943, 66.06493, 867.384, 403.4337, 1277.6981, 402.19427, 1293.8032, 630.8867, 640.5753, 621.9431, 78.98462, 625.10474, -651.6931, 669.539, -977.9505, 352.7344, -544.2938, 338.01688, -279.15094, 100.47384)
 
 [node name="Player" parent="." instance=ExtResource("1_3hls8")]
+
+[node name="Coin" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(45, 42)
+
+[node name="Coin2" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(126, 48)
+
+[node name="Coin3" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(209, 77)
+
+[node name="Coin4" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(323, 133)
+
+[node name="Coin5" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(420, 178)
+
+[node name="Coin6" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(550, 238)
+
+[node name="Coin7" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(725, 319)
+
+[node name="Coin8" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(869, 389)
+
+[node name="Coin9" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(950, 391)
+
+[node name="Coin10" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(1038, 393)
+
+[node name="Coin11" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(1113, 377)
+
+[node name="Coin12" parent="." instance=ExtResource("12_27bay")]
+position = Vector2(1186, 391)
