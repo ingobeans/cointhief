@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6m7sk3kvxx4i"]
+
+[ext_resource type="PackedScene" uid="uid://dg7bjpt00i4i4" path="res://assets/player.ase" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dn1gq2327l1a1" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
+size = Vector2(6, 15)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_sh265")
+
+[node name="Sprite" parent="." instance=ExtResource("1_4flbx")]
+autoplay = "sprint"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -27.09)
+zoom = Vector2(2, 2)
