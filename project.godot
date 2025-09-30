@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+ss2d/version="3.3.0"
+
 [application]
 
 config/name="cointhief"
@@ -26,7 +30,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/nklbdev.aseprite_importers/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/nklbdev.aseprite_importers/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
 
 [input]
 
@@ -54,5 +58,6 @@ slide={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_repeat=1
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
