@@ -25,6 +25,8 @@ func _physics_process(delta: float) -> void:
 		$Sprite.flip_h = move_dir < 0
 	elif on_floor and !sliding:
 		current_friction *= 3
+	elif on_floor and sliding:
+		current_friction /= 2
 	
 	var normal = get_floor_normal()
 	if on_floor:

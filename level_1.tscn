@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bag4re4t62vha"]
+[gd_scene load_steps=36 format=4 uid="uid://bag4re4t62vha"]
 
 [ext_resource type="PackedScene" uid="uid://c6m7sk3kvxx4i" path="res://player.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_5hph3"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="6_gyffv"]
 [ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="9_ggavl"]
 [ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="10_ubhxj"]
-[ext_resource type="PackedScene" uid="uid://di7o3qc56mehu" path="res://coin.tscn" id="12_27bay"]
+[ext_resource type="Script" uid="uid://dng5rafae843g" path="res://coin_map.gd" id="12_27bay"]
 
 [sub_resource type="Resource" id="Resource_27bay"]
 script = ExtResource("3_j7kpp")
@@ -150,11 +150,18 @@ script = ExtResource("6_gyffv")
 _edge_meta_materials = Array[ExtResource("5_5rr72")]([SubResource("Resource_duihb")])
 fill_textures = Array[Texture2D]([ExtResource("6_27bay")])
 
+[sub_resource type="Curve2D" id="Curve2D_1pe0h"]
+bake_interval = 512.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 74, 46, 0, 0, 0, 0, 154, 54, 0, 0, 0, 0, 278, 114, 0, 0, 0, 0, 353, 150, 0, 0, 0, 0, 456, 199, 0, 0, 0, 0, 566, 253, 0, 0, 0, 0, 684, 306, 0, 0, 0, 0, 798, 358, 0, 0, 0, 0, 865, 388, 0, 0, 0, 0, 982, 390, 0, 0, 0, 0, 1052, 387, 0, 0, 0, 0, 1103, 355, 0, 0, 0, 0, 1133, 344, 0, 0, 0, 0, 1156, 354, 0, 0, 0, 0, 1197, 391, 0, 0, 0, 0, 1229, 391)
+}
+point_count = 16
+
 [node name="Level1" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Ground" type="StaticBody2D" parent="."]
 
-[node name="SS2D_Shape_Closed" type="Node2D" parent="StaticBody2D"]
+[node name="SS2D_Shape_Closed" type="Node2D" parent="Ground"]
 texture_repeat = 1
 position = Vector2(-12, 1)
 script = ExtResource("2_5hph3")
@@ -164,44 +171,12 @@ shape_material = SubResource("Resource_lhbbi")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://c6kxvfqr4ewu1"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 visible = false
 polygon = PackedVector2Array(-44.934364, 53.475483, 141.81943, 66.06493, 867.384, 403.4337, 1277.6981, 402.19427, 1293.8032, 630.8867, 640.5753, 621.9431, 78.98462, 625.10474, -651.6931, 669.539, -977.9505, 352.7344, -544.2938, 338.01688, -279.15094, 100.47384)
 
 [node name="Player" parent="." instance=ExtResource("1_3hls8")]
 
-[node name="Coin" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(45, 42)
-
-[node name="Coin2" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(126, 48)
-
-[node name="Coin3" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(209, 77)
-
-[node name="Coin4" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(323, 133)
-
-[node name="Coin5" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(420, 178)
-
-[node name="Coin6" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(550, 238)
-
-[node name="Coin7" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(725, 319)
-
-[node name="Coin8" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(869, 389)
-
-[node name="Coin9" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(950, 391)
-
-[node name="Coin10" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(1038, 393)
-
-[node name="Coin11" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(1113, 377)
-
-[node name="Coin12" parent="." instance=ExtResource("12_27bay")]
-position = Vector2(1186, 391)
+[node name="CoinMap" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1pe0h")
+script = ExtResource("12_27bay")
