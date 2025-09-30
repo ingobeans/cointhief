@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bag4re4t62vha"]
+[gd_scene load_steps=39 format=4 uid="uid://bag4re4t62vha"]
 
 [ext_resource type="PackedScene" uid="uid://c6m7sk3kvxx4i" path="res://player.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_5hph3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpiqd8e2hp8il" path="res://tower.tscn" id="3_ggavl"]
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="3_j7kpp"]
 [ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_bjebc"]
+[ext_resource type="Texture2D" uid="uid://718dyrglvirm" path="res://assets/sign.ase" id="4_ubhxj"]
 [ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="5_1pe0h"]
 [ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="5_5rr72"]
 [ext_resource type="Texture2D" uid="uid://cb6euhr2lgw2n" path="res://assets/ground_edge.ase" id="6_1pe0h"]
@@ -170,6 +171,10 @@ position = Vector2(-315, 7)
 
 [node name="Tower" parent="." instance=ExtResource("3_ggavl")]
 position = Vector2(-142, 9)
+
+[node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+texture = ExtResource("4_ubhxj")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 

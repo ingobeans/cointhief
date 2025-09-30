@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
 var speed = 1200.0
-var max_move_speed = 200.0
+var max_move_speed = 165.0
 var friction = 0.05
 var gravity = 600.0
 var jump_force = 200.0
 var slide_speed_multiplier = 300.0
 var slide_per_frame = 0.1
 var slide_slope_multiplier = 100.0
+
+var speed_boost = 0.0
+var boost_on_pickup = 1.2
+var velocity_on_speed_boost_start = 35.0
 
 var sliding = false
 var fall_distance = 0.0
@@ -17,6 +21,14 @@ func _physics_process(delta: float) -> void:
 	var move_dir = Input.get_axis("left","right")
 	var current_friction = friction
 	var right_direction = Vector2.RIGHT
+	var current_max_speed = max_move_speed
+	if speed_boost > 0.0:
+		if speed_boost == boost_on_pickup:
+			if move_dir != 0.0:
+				velocity.x += velocity_on_speed_boost_start * move_dir
+		speed_boost -= delta
+		
+		current_max_speed *= 1.5
 	
 	sliding = Input.is_action_pressed("slide")
 	velocity.y += gravity * delta
@@ -41,9 +53,9 @@ func _physics_process(delta: float) -> void:
 		$Sprite.rotation = 0.0
 	
 	var allow_move = false
-	if velocity.x < -max_move_speed:
+	if velocity.x < -current_max_speed:
 		allow_move = move_dir > 0 
-	elif velocity.x > max_move_speed:
+	elif velocity.x > current_max_speed:
 		allow_move = move_dir < 0 
 	else:
 		allow_move = true
