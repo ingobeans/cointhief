@@ -7,11 +7,11 @@ var gravity = 600.0
 var jump_force = 200.0
 var slide_speed_multiplier = 300.0
 var slide_per_frame = 0.1
-var slide_slope_multiplier = 100.0
+var slide_slope_multiplier = 65.0
 
 var speed_boost = 0.0
 var boost_on_pickup = 1.2
-var velocity_on_speed_boost_start = 35.0
+var velocity_on_speed_boost_start = 15.0
 
 var sliding = false
 var fall_distance = 0.0
@@ -28,7 +28,9 @@ func _physics_process(delta: float) -> void:
 				velocity.x += velocity_on_speed_boost_start * move_dir
 		speed_boost -= delta
 		
-		current_max_speed *= 1.5
+		current_max_speed *= 1.25
+		if move_dir != 0:
+			current_friction /= 2.0
 	
 	sliding = Input.is_action_pressed("slide")
 	velocity.y += gravity * delta
@@ -93,7 +95,15 @@ func _physics_process(delta: float) -> void:
 		
 		if sliding:
 			var force = ((angle * slide_slope_multiplier) ** 2 * delta)
-			velocity += force * normal.rotated(PI / 2 * (1.0 if normal.x > 0 else -1.0)).normalized()
+			var direction = normal.rotated(PI / 2 * (1.0 if normal.x > 0 else -1.0)).normalized()
+			
+			# make player not bounce while traveling down slope
+			if direction.y > 0:
+				direction.y += 15.0
+				
+			if abs((velocity + direction).x) < abs(velocity.x):
+				force /= 3.0
+			velocity += direction * force
 	else:
 		pass
 		#$CollisionShape2D.rotation = 0

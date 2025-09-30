@@ -79,13 +79,14 @@ size = Vector2(13, 13)
 sprite_frames = SubResource("SpriteFrames_xcrr1")
 animation = &"Loop"
 autoplay = "Loop"
-frame_progress = 0.8401851
+frame_progress = 0.864736
 script = ExtResource("2_0t63x")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_v7riw")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0.5)
