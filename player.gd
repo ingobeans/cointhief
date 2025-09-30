@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 			var force = -jump_force
 			if sliding:
 				force *= min(abs(velocity.x) / 200.0,1.65)
-				if velocity.x < 20.0:
+				if abs(velocity.x)  < 20.0:
 					force = 0.0
 			velocity.y = force
 	else:
