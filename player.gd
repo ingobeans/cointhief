@@ -28,9 +28,10 @@ func _physics_process(delta: float) -> void:
 				velocity.x += velocity_on_speed_boost_start * move_dir
 		speed_boost -= delta
 		
-		current_max_speed *= 1.25
-		if move_dir != 0:
-			current_friction /= 2.0
+		if !sliding:
+			current_max_speed *= 1.55
+		else:
+			current_friction /= 1.7
 	
 	sliding = Input.is_action_pressed("slide")
 	velocity.y += gravity * delta
