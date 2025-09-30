@@ -62,7 +62,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x,0.0,current_friction)
 		
 		if Input.is_action_pressed("jump"):
-			velocity.y = -jump_force
+			var force = -jump_force
+			if sliding:
+				force *= min(abs(velocity.x) / 200.0,1.65)
+				if velocity.x < 20.0:
+					force = 0.0
+			velocity.y = force
 	else:
 		fall_distance += delta
 		
@@ -78,5 +83,5 @@ func _physics_process(delta: float) -> void:
 			var force = ((angle * slide_slope_multiplier) ** 2 * delta)
 			velocity += force * normal.rotated(PI / 2 * (1.0 if normal.x > 0 else -1.0)).normalized()
 	else:
-		#pass
-		$CollisionShape2D.rotation = 0
+		pass
+		#$CollisionShape2D.rotation = 0
