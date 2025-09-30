@@ -1,6 +1,8 @@
 # cointhief!!!
 <sup>a game for hackclub's siege</sup>
 
+<img width="1070" height="452" alt="Screenshot 2025-09-30 212807" src="https://github.com/user-attachments/assets/9628b83f-fa36-46c2-bdc1-9bd02b4515b6" />
+
 you are a goblin. go thief coins!
 
 this is a little 2d velocity based platformer im working on! made in godot, so thats pretty neat :>
