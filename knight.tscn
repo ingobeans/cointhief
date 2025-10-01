@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbqlgt1kcctbh"]
+
+[ext_resource type="Script" uid="uid://cs8lldnrhsx0c" path="res://knight.gd" id="1_nsuie"]
+[ext_resource type="PackedScene" uid="uid://certl4rv281ng" path="res://assets/knight.ase" id="1_owtlo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsuie"]
+size = Vector2(9, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26ldq"]
+size = Vector2(52, 23)
+
+[node name="Knight" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_nsuie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nsuie")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_26ldq")
+
+[node name="Sprite" parent="." instance=ExtResource("1_owtlo")]
+position = Vector2(0, -3)
+autoplay = "idle"

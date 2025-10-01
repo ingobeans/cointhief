@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bag4re4t62vha"]
+[gd_scene load_steps=50 format=4 uid="uid://bag4re4t62vha"]
 
 [ext_resource type="PackedScene" uid="uid://c6m7sk3kvxx4i" path="res://player.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_5hph3"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="9_ggavl"]
 [ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="10_ubhxj"]
 [ext_resource type="Script" uid="uid://dng5rafae843g" path="res://coin_map.gd" id="12_27bay"]
+[ext_resource type="PackedScene" uid="uid://dbqlgt1kcctbh" path="res://knight.tscn" id="17_lhbbi"]
 
 [sub_resource type="Curve2D" id="Curve2D_1pe0h"]
 bake_interval = 512.0
@@ -270,3 +271,9 @@ visible = false
 polygon = PackedVector2Array(202.97647, 48.70957, 322.66748, 67.35971, 432.83527, 137.8276, 872.83844, 401.6155, 1302.2937, 401.6013, 1314.226, 398.08853, 1320.7487, 389.4631, 1319.421, 346.02155, 1328.0406, 336.80002, 1341.0841, 333.221, 1966.5173, 333.605, 2076.3918, 300.41977, 2517.507, 295.6555, 2542.7573, 314.38373, 2529.5303, 609.1221, 2288.7483, 615.6968, 640.5753, 621.9431, 78.98462, 625.10474, -1021.922, 634.2204, -990.4176, 39.73642)
 
 [node name="Player" parent="." instance=ExtResource("1_3hls8")]
+
+[node name="Knight" parent="." instance=ExtResource("17_lhbbi")]
+position = Vector2(2110, 290)
+
+[node name="Knight2" parent="." instance=ExtResource("17_lhbbi")]
+position = Vector2(2201, 289)
