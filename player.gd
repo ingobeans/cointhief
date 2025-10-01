@@ -5,7 +5,10 @@ var max_move_speed = 165.0
 var friction = 0.05
 var gravity = 600.0
 var jump_force = 200.0
-var slide_speed_multiplier = 300.0
+
+# had to temporarily disable this to nerf
+# slide-jumping :/
+var slide_speed_multiplier = 300.0 * 0.0
 var slide_per_frame = 0.1
 var slide_slope_multiplier = 65.0
 

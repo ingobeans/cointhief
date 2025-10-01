@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://btxxx5klwlie3"]
+
+[ext_resource type="Shader" uid="uid://dhmlgkoq4fsht" path="res://finish_line.gdshader" id="1_6tsjx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yfpjd"]
+shader = ExtResource("1_6tsjx")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjf46"]
+size = Vector2(20, 229)
+
+[node name="FinishLine" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_yfpjd")
+offset_left = -10.0
+offset_top = -191.0
+offset_right = 10.0
+offset_bottom = -62.0
+scale = Vector2(1, 1.48)
+
+[node name="Area2D" type="Area2D" parent="ColorRect"]
+position = Vector2(10, 119)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Area2D"]
+visible = false
+position = Vector2(0, -104.5)
+shape = SubResource("RectangleShape2D_jjf46")
