@@ -6,3 +6,9 @@
 you are a goblin. go thief coins!
 
 this is a little 2d velocity based platformer im working on! made in godot, so thats pretty neat :>
+
+as with all my other games, i make all the assets and code myself !
+
+## Controls!!
+
+​use WASD to move, and SHIFT to slide!

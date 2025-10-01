@@ -20,4 +20,4 @@ autoplay = "sprint"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -27.09)
-zoom = Vector2(2, 2)
+zoom = Vector2(3.33, 3.33)
