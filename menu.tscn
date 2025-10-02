@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dovt0vs2guhrf"]
+
+[ext_resource type="Script" uid="uid://7rji7va6hfdl" path="res://active_level.gd" id="1_lti8b"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="ActiveLevel" type="Node2D" parent="."]
+script = ExtResource("1_lti8b")

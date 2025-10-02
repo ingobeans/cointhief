@@ -17,7 +17,7 @@ var attacking_damage_done = false
 var hit_force = 270.0
 
 func _ready() -> void:
-	player = get_tree().root.get_child(0).get_node("Player")
+	player = get_node("../Player")
 
 func _physics_process(delta: float) -> void:
 	var on_floor = is_on_floor()

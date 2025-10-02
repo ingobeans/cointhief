@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=11 format=3 uid="uid://bygate8g4nqa1"]
+
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_277gj"]
+[ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_816ij"]
+[ext_resource type="Texture2D" uid="uid://cb6euhr2lgw2n" path="res://assets/ground_edge.ase" id="3_6elp1"]
+[ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="4_hgs7u"]
+[ext_resource type="Texture2D" uid="uid://dbdpfhoglb1c8" path="res://assets/ground_background.ase" id="5_4qk8i"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="6_elgf3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3o2xh"]
+diffuse_texture = ExtResource("3_6elp1")
+texture_repeat = 2
+
+[sub_resource type="Resource" id="Resource_ethxx"]
+script = ExtResource("2_816ij")
+textures = Array[Texture2D]([SubResource("CanvasTexture_3o2xh")])
+use_corner_texture = false
+metadata/_custom_type_script = "uid://d0xjijisx1woh"
+
+[sub_resource type="Resource" id="Resource_3o2xh"]
+script = ExtResource("4_hgs7u")
+distance = 360.0
+
+[sub_resource type="Resource" id="Resource_duihb"]
+script = ExtResource("1_277gj")
+edge_material = SubResource("Resource_ethxx")
+normal_range = SubResource("Resource_3o2xh")
+weld = false
+offset = -1.0
+metadata/_custom_type_script = "uid://0lhxan4cqrc1"
+
+[resource]
+script = ExtResource("6_elgf3")
+_edge_meta_materials = Array[ExtResource("1_277gj")]([SubResource("Resource_duihb")])
+fill_textures = Array[Texture2D]([ExtResource("5_4qk8i")])
