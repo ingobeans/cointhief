@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 aseprite_executable_path="C:/Users/ingemar/Things/LibreSprite/libresprite.exe"
 
+[autoload]
+
+config="*res://config.gd"
+
 [display]
 
 window/size/viewport_width=1920

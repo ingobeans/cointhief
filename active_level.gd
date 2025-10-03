@@ -7,7 +7,7 @@ func return_to_menu():
 	get_child(0).queue_free()
 	ui.visible = true
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !ui.visible:
 		if Input.is_action_just_pressed("pause"):
 			pause_menu.visible = !pause_menu.visible
