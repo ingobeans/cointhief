@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dovt0vs2guhrf"]
+[gd_scene load_steps=21 format=3 uid="uid://dovt0vs2guhrf"]
 
 [ext_resource type="Script" uid="uid://7rji7va6hfdl" path="res://active_level.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://qtbc5esofv0n" path="res://assets/logo.ase" id="1_ouk20"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dqngfgpfyx4if" path="res://assets/ui/options.ase" id="16_3ls4m"]
 [ext_resource type="Texture2D" uid="uid://bnvbhmwmv5mi3" path="res://assets/ui/volume.ase" id="16_4ndjb"]
 [ext_resource type="Script" uid="uid://dsjnhh3mmah8u" path="res://volume_slider.gd" id="17_3ls4m"]
+[ext_resource type="AudioStream" uid="uid://bu1ljklno025a" path="res://assets/coin.wav" id="18_5h80m"]
 
 [sub_resource type="GDScript" id="GDScript_4ndjb"]
 script/source = "extends Button
@@ -223,6 +224,9 @@ scale = Vector2(1.0012332, 1)
 theme = ExtResource("2_4hy44")
 script = ExtResource("17_3ls4m")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Options/HSlider"]
+stream = ExtResource("18_5h80m")
+
 [node name="Back" type="Button" parent="Options"]
 offset_left = 816.3414
 offset_top = 755.64734
@@ -235,3 +239,5 @@ script = SubResource("GDScript_4ndjb")
 
 [node name="ActiveLevel" type="Node2D" parent="."]
 script = ExtResource("1_lti8b")
+
+[connection signal="drag_ended" from="Options/HSlider" to="Options/HSlider" method="_on_drag_ended"]
