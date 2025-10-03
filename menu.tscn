@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dovt0vs2guhrf"]
+[gd_scene load_steps=19 format=3 uid="uid://dovt0vs2guhrf"]
 
 [ext_resource type="Script" uid="uid://7rji7va6hfdl" path="res://active_level.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://qtbc5esofv0n" path="res://assets/logo.ase" id="1_ouk20"]
@@ -14,8 +14,16 @@
 [ext_resource type="Texture2D" uid="uid://c5pwoabxtouvi" path="res://assets/ui/back.ase" id="10_h1wq0"]
 [ext_resource type="Texture2D" uid="uid://bh62pn5whbm58" path="res://assets/ui/6.ase" id="11_jspdm"]
 [ext_resource type="Texture2D" uid="uid://di34v8q183i84" path="res://assets/ui/resume.ase" id="13_oxnod"]
-[ext_resource type="Script" uid="uid://cgcdjd7r6epyl" path="res://resume.gd" id="14_4ndjb"]
 [ext_resource type="Texture2D" uid="uid://kt5hap5ypf4t" path="res://assets/ui/back_to_menu.ase" id="14_gd0jp"]
+[ext_resource type="Texture2D" uid="uid://dqngfgpfyx4if" path="res://assets/ui/options.ase" id="16_3ls4m"]
+[ext_resource type="Texture2D" uid="uid://bnvbhmwmv5mi3" path="res://assets/ui/volume.ase" id="16_4ndjb"]
+
+[sub_resource type="GDScript" id="GDScript_4ndjb"]
+script/source = "extends Button
+
+func _pressed() -> void:
+	get_parent().visible = false
+"
 
 [node name="Menu" type="Node2D"]
 
@@ -35,7 +43,7 @@ texture = ExtResource("1_ouk20")
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Levels" type="Button" parent="MainMenuLayer/MainMenu" node_paths=PackedStringArray("menu_to_load")]
+[node name="Levels" type="Button" parent="MainMenuLayer/MainMenu" node_paths=PackedStringArray("loads", "unloads")]
 layout_mode = 0
 offset_left = 757.0
 offset_top = 346.0
@@ -45,7 +53,20 @@ scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("2_mae5d")
 script = ExtResource("4_iqepy")
-menu_to_load = NodePath("../../LevelsMenu")
+loads = [NodePath("../../LevelsMenu")]
+unloads = [NodePath("..")]
+
+[node name="Options" type="Button" parent="MainMenuLayer/MainMenu" node_paths=PackedStringArray("loads")]
+layout_mode = 0
+offset_left = 745.059
+offset_top = 483.0
+offset_right = 831.059
+offset_bottom = 509.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("16_3ls4m")
+script = ExtResource("4_iqepy")
+loads = [NodePath("../../../Options")]
 
 [node name="LevelsMenu" type="Control" parent="MainMenuLayer"]
 visible = false
@@ -120,7 +141,7 @@ theme = ExtResource("2_4hy44")
 icon = ExtResource("11_jspdm")
 script = ExtResource("5_iqepy")
 
-[node name="Back" type="Button" parent="MainMenuLayer/LevelsMenu" node_paths=PackedStringArray("menu_to_load")]
+[node name="Back" type="Button" parent="MainMenuLayer/LevelsMenu" node_paths=PackedStringArray("loads", "unloads")]
 layout_mode = 0
 offset_left = 811.7767
 offset_top = 753.365
@@ -130,19 +151,20 @@ scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("10_h1wq0")
 script = ExtResource("4_iqepy")
-menu_to_load = NodePath("../../MainMenu")
+loads = [NodePath("../../MainMenu")]
+unloads = [NodePath("..")]
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu"]
-offset_left = 591.0
+offset_left = 568.0
 offset_top = 299.0
-offset_right = 1292.0
+offset_right = 1315.0
 offset_bottom = 870.0
 color = Color(0, 0, 0, 1)
 
-[node name="Resume" type="Button" parent="PauseMenu"]
+[node name="Resume" type="Button" parent="PauseMenu" node_paths=PackedStringArray("unloads")]
 offset_left = 740.0
 offset_top = 754.0
 offset_right = 829.0
@@ -150,9 +172,10 @@ offset_bottom = 777.0
 scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("13_oxnod")
-script = ExtResource("14_4ndjb")
+script = ExtResource("4_iqepy")
+unloads = [NodePath("..")]
 
-[node name="BackToMenu" type="Button" parent="PauseMenu" node_paths=PackedStringArray("menu_to_load")]
+[node name="BackToMenu" type="Button" parent="PauseMenu" node_paths=PackedStringArray("loads", "unloads")]
 offset_left = 688.0
 offset_top = 624.0
 offset_right = 799.0
@@ -161,7 +184,53 @@ scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("14_gd0jp")
 script = ExtResource("4_iqepy")
-menu_to_load = NodePath("../../MainMenuLayer")
+loads = [NodePath("../../MainMenuLayer")]
+unloads = [NodePath("..")]
+
+[node name="Options" type="Button" parent="PauseMenu" node_paths=PackedStringArray("loads")]
+offset_left = 745.059
+offset_top = 483.0
+offset_right = 831.059
+offset_bottom = 509.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("16_3ls4m")
+script = ExtResource("4_iqepy")
+loads = [NodePath("../../Options")]
+
+[node name="Options" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Options"]
+offset_left = 568.0
+offset_top = 299.0
+offset_right = 1315.0
+offset_bottom = 870.0
+color = Color(0, 0, 0, 1)
+
+[node name="Volume" type="Sprite2D" parent="Options"]
+position = Vector2(849.00006, 403.74115)
+scale = Vector2(3.0926409, 3.0926409)
+texture = ExtResource("16_4ndjb")
+
+[node name="HSlider" type="HSlider" parent="Options"]
+offset_left = 735.0
+offset_top = 418.74115
+offset_right = 1129.0
+offset_bottom = 485.74115
+scale = Vector2(1.0012332, 1)
+theme = ExtResource("2_4hy44")
+value = 25.0
+
+[node name="Back" type="Button" parent="Options"]
+offset_left = 811.7767
+offset_top = 753.365
+offset_right = 865.7767
+offset_bottom = 776.365
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("10_h1wq0")
+script = SubResource("GDScript_4ndjb")
 
 [node name="ActiveLevel" type="Node2D" parent="."]
 script = ExtResource("1_lti8b")

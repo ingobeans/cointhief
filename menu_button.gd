@@ -1,8 +1,10 @@
 extends Button
 
-@export var menu_to_load: Node
-@onready var parent = self.get_parent()
+@export var loads: Array[Node]
+@export var unloads: Array[Node]
 
 func _pressed() -> void:
-	menu_to_load.visible = true
-	parent.visible = false
+	for i in loads:
+		i.visible = true
+	for i in unloads:
+		i.visible = false
