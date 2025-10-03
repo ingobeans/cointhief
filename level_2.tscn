@@ -187,7 +187,7 @@ script = ExtResource("10_ikghu")
 texture = SubResource("CanvasTexture_3o2xh")
 mesh = SubResource("ArrayMesh_hycyb")
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="CoinMap" type="Path2D" parent="."]
 curve = SubResource("Curve2D_1pe0h")

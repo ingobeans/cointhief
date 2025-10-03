@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bag4re4t62vha"]
+[gd_scene load_steps=36 format=4 uid="uid://bag4re4t62vha"]
 
 [ext_resource type="PackedScene" uid="uid://c6m7sk3kvxx4i" path="res://player.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_5hph3"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cb6euhr2lgw2n" path="res://assets/ground_edge.ase" id="6_1pe0h"]
 [ext_resource type="Texture2D" uid="uid://dbdpfhoglb1c8" path="res://assets/ground_background.ase" id="6_27bay"]
 [ext_resource type="PackedScene" uid="uid://btxxx5klwlie3" path="res://finish_line.tscn" id="6_gjkv5"]
-[ext_resource type="PackedScene" uid="uid://da7pfbxucgyvw" path="res://level_2.tscn" id="7_00ld1"]
 [ext_resource type="Script" uid="uid://dng5rafae843g" path="res://coin_map.gd" id="12_27bay"]
 [ext_resource type="Resource" uid="uid://bygate8g4nqa1" path="res://ground_material.tres" id="14_65or1"]
 [ext_resource type="PackedScene" uid="uid://dbqlgt1kcctbh" path="res://knight.tscn" id="17_lhbbi"]
@@ -22,6 +21,10 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 247, 4, 0, 0, 0, 0, 288, 4, 0, 0, 0, 0, 326, 4, 0, 0, 0, 0, 1039, 81, 0, 0, 0, 0, 1149, 81, 0, 0, 0, 0, 1203, 81, 0, 0, 0, 0, 1229, 59, 0, 0, 0, 0, 1250, 51, 0, 0, 0, 0, 1274, 58, 0, 0, 0, 0, 1388, 82, 0, 0, 0, 0, 1460, 81, 0, 0, 0, 0, 1487, 82)
 }
 point_count = 12
+
+[sub_resource type="Resource" id="Resource_be5co"]
+script = ExtResource("3_j7kpp")
+position = Vector2(-519.6918, 1113.5149)
 
 [sub_resource type="Resource" id="Resource_00ld1"]
 script = ExtResource("3_j7kpp")
@@ -72,10 +75,6 @@ position = Vector2(1289.1212, 156.64336)
 [sub_resource type="Resource" id="Resource_ia5ws"]
 script = ExtResource("3_j7kpp")
 position = Vector2(1290.085, 92.783104)
-
-[sub_resource type="Resource" id="Resource_be5co"]
-script = ExtResource("3_j7kpp")
-position = Vector2(-519.6918, 1113.5149)
 
 [sub_resource type="Resource" id="Resource_hycyb"]
 script = ExtResource("3_j7kpp")
@@ -158,7 +157,6 @@ texture = ExtResource("4_ubhxj")
 
 [node name="FinishLine" parent="." instance=ExtResource("6_gjkv5")]
 position = Vector2(4000, 723)
-next_level = ExtResource("7_00ld1")
 
 [node name="Tree3" type="Sprite2D" parent="."]
 position = Vector2(945, 16)
@@ -196,7 +194,6 @@ position = Vector2(818, 84)
 
 [node name="FinishLine2" parent="." instance=ExtResource("6_gjkv5")]
 position = Vector2(1703, 94)
-next_level = ExtResource("7_00ld1")
 
 [node name="Tower" parent="." instance=ExtResource("3_ggavl")]
 position = Vector2(-169, -1)
