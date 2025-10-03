@@ -1,8 +1,133 @@
-[gd_scene load_steps=2 format=3 uid="uid://dovt0vs2guhrf"]
+[gd_scene load_steps=14 format=3 uid="uid://dovt0vs2guhrf"]
 
 [ext_resource type="Script" uid="uid://7rji7va6hfdl" path="res://active_level.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://qtbc5esofv0n" path="res://assets/logo.ase" id="1_ouk20"]
+[ext_resource type="Theme" uid="uid://cxuujxb3yf2ph" path="res://theme.tres" id="2_4hy44"]
+[ext_resource type="Texture2D" uid="uid://dnrfvwa8chl4i" path="res://assets/ui/levels.ase" id="2_mae5d"]
+[ext_resource type="Script" uid="uid://d1j0bwd6ajwok" path="res://menu_button.gd" id="4_iqepy"]
+[ext_resource type="Texture2D" uid="uid://3s37crb4p7ky" path="res://assets/ui/1.ase" id="4_kk3ma"]
+[ext_resource type="Script" uid="uid://b2rjr71s1mixk" path="res://level_button.gd" id="5_iqepy"]
+[ext_resource type="Texture2D" uid="uid://cn5xpkm8ujk8b" path="res://assets/ui/2.ase" id="5_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://cqiu0cn86th6v" path="res://assets/ui/3.ase" id="6_iqepy"]
+[ext_resource type="Texture2D" uid="uid://db0slft2otfyx" path="res://assets/ui/4.ase" id="7_h1wq0"]
+[ext_resource type="Texture2D" uid="uid://de4mig14y1752" path="res://assets/ui/5.ase" id="10_g7jxm"]
+[ext_resource type="Texture2D" uid="uid://c5pwoabxtouvi" path="res://assets/ui/back.ase" id="10_h1wq0"]
+[ext_resource type="Texture2D" uid="uid://bh62pn5whbm58" path="res://assets/ui/6.ase" id="11_jspdm"]
 
 [node name="Menu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(962, 193)
+scale = Vector2(6.824735, 6.824735)
+texture = ExtResource("1_ouk20")
+
+[node name="MainMenu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Levels" type="Button" parent="CanvasLayer/MainMenu" node_paths=PackedStringArray("menu_to_load")]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 346.0
+offset_right = 835.0
+offset_bottom = 368.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("2_mae5d")
+script = ExtResource("4_iqepy")
+menu_to_load = NodePath("../../LevelsMenu")
+
+[node name="LevelsMenu" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="1" type="Button" parent="CanvasLayer/LevelsMenu"]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 323.0
+offset_right = 619.0
+offset_bottom = 350.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("4_kk3ma")
+script = ExtResource("5_iqepy")
+
+[node name="2" type="Button" parent="CanvasLayer/LevelsMenu"]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 323.0
+offset_right = 741.0
+offset_bottom = 350.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("5_nrnbx")
+script = ExtResource("5_iqepy")
+
+[node name="3" type="Button" parent="CanvasLayer/LevelsMenu"]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 323.0
+offset_right = 861.0
+offset_bottom = 350.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("6_iqepy")
+script = ExtResource("5_iqepy")
+
+[node name="4" type="Button" parent="CanvasLayer/LevelsMenu"]
+layout_mode = 0
+offset_left = 956.99994
+offset_top = 323.0
+offset_right = 979.99994
+offset_bottom = 350.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("7_h1wq0")
+script = ExtResource("5_iqepy")
+
+[node name="5" type="Button" parent="CanvasLayer/LevelsMenu"]
+layout_mode = 0
+offset_left = 1077.0
+offset_top = 323.0
+offset_right = 1100.0
+offset_bottom = 350.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("10_g7jxm")
+script = ExtResource("5_iqepy")
+
+[node name="6" type="Button" parent="CanvasLayer/LevelsMenu"]
+layout_mode = 0
+offset_left = 1196.0
+offset_top = 323.0
+offset_right = 1219.0
+offset_bottom = 350.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("11_jspdm")
+script = ExtResource("5_iqepy")
+
+[node name="Back" type="Button" parent="CanvasLayer/LevelsMenu" node_paths=PackedStringArray("menu_to_load")]
+layout_mode = 0
+offset_left = 811.7767
+offset_top = 753.365
+offset_right = 865.7767
+offset_bottom = 776.365
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("10_h1wq0")
+script = ExtResource("4_iqepy")
+menu_to_load = NodePath("../../MainMenu")
 
 [node name="ActiveLevel" type="Node2D" parent="."]
 script = ExtResource("1_lti8b")

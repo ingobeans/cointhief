@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var next_level: PackedScene
 var should_load_next = false
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
@@ -10,4 +9,4 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	if should_load_next:
-		get_parent().get_parent().change_scene(next_level)
+		get_parent().get_parent().return_to_menu()
