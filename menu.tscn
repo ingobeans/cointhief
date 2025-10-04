@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dovt0vs2guhrf"]
+[gd_scene load_steps=22 format=3 uid="uid://dovt0vs2guhrf"]
 
 [ext_resource type="Script" uid="uid://7rji7va6hfdl" path="res://active_level.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://qtbc5esofv0n" path="res://assets/logo.ase" id="1_ouk20"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://bh62pn5whbm58" path="res://assets/ui/6.ase" id="11_jspdm"]
 [ext_resource type="Texture2D" uid="uid://di34v8q183i84" path="res://assets/ui/resume.ase" id="13_oxnod"]
 [ext_resource type="Texture2D" uid="uid://kt5hap5ypf4t" path="res://assets/ui/back_to_menu.ase" id="14_gd0jp"]
+[ext_resource type="Texture2D" uid="uid://7aftuq3sanl7" path="res://assets/ui/restart.ase" id="15_w25hu"]
 [ext_resource type="Texture2D" uid="uid://dqngfgpfyx4if" path="res://assets/ui/options.ase" id="16_3ls4m"]
 [ext_resource type="Texture2D" uid="uid://bnvbhmwmv5mi3" path="res://assets/ui/volume.ase" id="16_4ndjb"]
+[ext_resource type="Script" uid="uid://bjvkauawxof7s" path="res://restart.gd" id="16_td6mg"]
 [ext_resource type="Script" uid="uid://dsjnhh3mmah8u" path="res://volume_slider.gd" id="17_3ls4m"]
 [ext_resource type="AudioStream" uid="uid://bu1ljklno025a" path="res://assets/coin.wav" id="18_5h80m"]
 
@@ -147,38 +149,52 @@ offset_bottom = 870.0
 color = Color(0, 0, 0, 1)
 
 [node name="Resume" type="Button" parent="PauseMenu" node_paths=PackedStringArray("unloads")]
-offset_left = 755.9765
+offset_left = 699.0
 offset_top = 756.28235
-offset_right = 837.9765
+offset_right = 809.0
 offset_bottom = 778.28235
 scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("13_oxnod")
+icon_alignment = 1
 script = ExtResource("4_iqepy")
 unloads = [NodePath("..")]
 
 [node name="BackToMenu" type="Button" parent="PauseMenu" node_paths=PackedStringArray("loads", "unloads")]
-offset_left = 690.28235
-offset_top = 633.12946
-offset_right = 800.28235
-offset_bottom = 655.12946
+offset_left = 699.0
+offset_top = 641.12946
+offset_right = 809.0
+offset_bottom = 663.12946
 scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("14_gd0jp")
+icon_alignment = 1
 script = ExtResource("4_iqepy")
 loads = [NodePath("../../MainMenuLayer")]
 unloads = [NodePath("..")]
 
 [node name="Options" type="Button" parent="PauseMenu" node_paths=PackedStringArray("loads")]
-offset_left = 758.7532
-offset_top = 492.12946
-offset_right = 838.7532
-offset_bottom = 514.12946
+offset_left = 699.0
+offset_top = 524.0
+offset_right = 809.0
+offset_bottom = 546.0
 scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("16_3ls4m")
+icon_alignment = 1
 script = ExtResource("4_iqepy")
 loads = [NodePath("../../Options")]
+
+[node name="Restart" type="Button" parent="PauseMenu"]
+offset_left = 699.0
+offset_top = 409.0
+offset_right = 809.0
+offset_bottom = 431.0
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("15_w25hu")
+icon_alignment = 1
+script = ExtResource("16_td6mg")
 
 [node name="Options" type="CanvasLayer" parent="."]
 visible = false
