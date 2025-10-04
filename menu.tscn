@@ -1,17 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://dovt0vs2guhrf"]
+[gd_scene load_steps=20 format=3 uid="uid://dovt0vs2guhrf"]
 
 [ext_resource type="Script" uid="uid://7rji7va6hfdl" path="res://active_level.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://qtbc5esofv0n" path="res://assets/logo.ase" id="1_ouk20"]
 [ext_resource type="Theme" uid="uid://cxuujxb3yf2ph" path="res://theme.tres" id="2_4hy44"]
 [ext_resource type="Texture2D" uid="uid://dnrfvwa8chl4i" path="res://assets/ui/levels.ase" id="2_mae5d"]
 [ext_resource type="Script" uid="uid://d1j0bwd6ajwok" path="res://menu_button.gd" id="4_iqepy"]
-[ext_resource type="Texture2D" uid="uid://3s37crb4p7ky" path="res://assets/ui/1.ase" id="4_kk3ma"]
-[ext_resource type="Script" uid="uid://b2rjr71s1mixk" path="res://level_button.gd" id="5_iqepy"]
 [ext_resource type="Texture2D" uid="uid://cn5xpkm8ujk8b" path="res://assets/ui/2.ase" id="5_nrnbx"]
 [ext_resource type="Texture2D" uid="uid://cqiu0cn86th6v" path="res://assets/ui/3.ase" id="6_iqepy"]
+[ext_resource type="PackedScene" uid="uid://fw5uaqqoj61m" path="res://level_button.tscn" id="6_td6mg"]
 [ext_resource type="Texture2D" uid="uid://db0slft2otfyx" path="res://assets/ui/4.ase" id="7_h1wq0"]
-[ext_resource type="Texture2D" uid="uid://bg6xp3uvn38dn" path="res://assets/ui/timer.ase" id="8_td6mg"]
-[ext_resource type="Texture2D" uid="uid://ckubvpsx3elxt" path="res://assets/ui/coins.ase" id="9_guify"]
 [ext_resource type="Texture2D" uid="uid://de4mig14y1752" path="res://assets/ui/5.ase" id="10_g7jxm"]
 [ext_resource type="Texture2D" uid="uid://c5pwoabxtouvi" path="res://assets/ui/back.ase" id="10_h1wq0"]
 [ext_resource type="Texture2D" uid="uid://bh62pn5whbm58" path="res://assets/ui/6.ase" id="11_jspdm"]
@@ -79,299 +76,52 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="1" type="Button" parent="MainMenuLayer/LevelsMenu"]
+[node name="1" parent="MainMenuLayer/LevelsMenu" instance=ExtResource("6_td6mg")]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 323.0
-offset_right = 550.134
-offset_bottom = 371.4148
-scale = Vector2(4.5647225, 4.5647225)
-theme = ExtResource("2_4hy44")
-icon = ExtResource("4_kk3ma")
-icon_alignment = 1
-vertical_icon_alignment = 0
-script = ExtResource("5_iqepy")
-
-[node name="Stats" type="Node2D" parent="MainMenuLayer/LevelsMenu/1"]
-visible = false
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Time" type="Label" parent="MainMenuLayer/LevelsMenu/1/Stats"]
-offset_left = 8.981911
-offset_top = 26.507637
-offset_right = 353.0837
-offset_bottom = 218.50763
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "00:00"
-horizontal_alignment = 2
-
-[node name="TimeIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/1/Stats"]
-position = Vector2(4.6004868, 31.98442)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("8_td6mg")
-
-[node name="Coins" type="Label" parent="MainMenuLayer/LevelsMenu/1/Stats"]
-offset_left = 7.229347
-offset_top = 37.242134
-offset_right = 381.22934
-offset_bottom = 229.24213
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "0/0"
-horizontal_alignment = 2
-
-[node name="CoinsIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/1/Stats"]
-position = Vector2(3.724205, 42.499847)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("9_guify")
-
-[node name="2" type="Button" parent="MainMenuLayer/LevelsMenu"]
-layout_mode = 0
-offset_left = 664.99994
+offset_left = 519.0
 offset_top = 324.0
-offset_right = 694.1339
+offset_right = 548.134
 offset_bottom = 372.4148
-scale = Vector2(4.5647225, 4.5647225)
-theme = ExtResource("2_4hy44")
+
+[node name="2" parent="MainMenuLayer/LevelsMenu" instance=ExtResource("6_td6mg")]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 324.0
+offset_right = 693.134
+offset_bottom = 372.4148
 icon = ExtResource("5_nrnbx")
-icon_alignment = 1
-vertical_icon_alignment = 0
-script = ExtResource("5_iqepy")
 
-[node name="Stats" type="Node2D" parent="MainMenuLayer/LevelsMenu/2"]
-visible = false
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Time" type="Label" parent="MainMenuLayer/LevelsMenu/2/Stats"]
-offset_left = 8.981911
-offset_top = 26.507637
-offset_right = 353.0837
-offset_bottom = 218.50763
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "00:00"
-horizontal_alignment = 2
-
-[node name="TimeIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/2/Stats"]
-position = Vector2(4.6004868, 31.98442)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("8_td6mg")
-
-[node name="Coins" type="Label" parent="MainMenuLayer/LevelsMenu/2/Stats"]
-offset_left = 7.229347
-offset_top = 37.242134
-offset_right = 381.22934
-offset_bottom = 229.24213
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "0/0"
-horizontal_alignment = 2
-
-[node name="CoinsIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/2/Stats"]
-position = Vector2(3.724205, 42.499847)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("9_guify")
-
-[node name="3" type="Button" parent="MainMenuLayer/LevelsMenu"]
+[node name="3" parent="MainMenuLayer/LevelsMenu" instance=ExtResource("6_td6mg")]
 layout_mode = 0
-offset_left = 808.99994
+offset_left = 809.0
 offset_top = 324.0
-offset_right = 838.1339
+offset_right = 838.134
 offset_bottom = 372.4148
-scale = Vector2(4.5647225, 4.5647225)
-theme = ExtResource("2_4hy44")
 icon = ExtResource("6_iqepy")
-icon_alignment = 1
-vertical_icon_alignment = 0
-script = ExtResource("5_iqepy")
 
-[node name="Stats" type="Node2D" parent="MainMenuLayer/LevelsMenu/3"]
-visible = false
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Time" type="Label" parent="MainMenuLayer/LevelsMenu/3/Stats"]
-offset_left = 8.981911
-offset_top = 26.507637
-offset_right = 353.0837
-offset_bottom = 218.50763
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "00:00"
-horizontal_alignment = 2
-
-[node name="TimeIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/3/Stats"]
-position = Vector2(4.6004868, 31.98442)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("8_td6mg")
-
-[node name="Coins" type="Label" parent="MainMenuLayer/LevelsMenu/3/Stats"]
-offset_left = 7.229347
-offset_top = 37.242134
-offset_right = 381.22934
-offset_bottom = 229.24213
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "0/0"
-horizontal_alignment = 2
-
-[node name="CoinsIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/3/Stats"]
-position = Vector2(3.724205, 42.499847)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("9_guify")
-
-[node name="4" type="Button" parent="MainMenuLayer/LevelsMenu"]
+[node name="4" parent="MainMenuLayer/LevelsMenu" instance=ExtResource("6_td6mg")]
 layout_mode = 0
-offset_left = 952.99994
+offset_left = 954.0
 offset_top = 324.0
-offset_right = 982.134
+offset_right = 983.134
 offset_bottom = 372.4148
-scale = Vector2(4.5647225, 4.5647225)
-theme = ExtResource("2_4hy44")
 icon = ExtResource("7_h1wq0")
-icon_alignment = 1
-vertical_icon_alignment = 0
-script = ExtResource("5_iqepy")
 
-[node name="Stats" type="Node2D" parent="MainMenuLayer/LevelsMenu/4"]
-visible = false
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Time" type="Label" parent="MainMenuLayer/LevelsMenu/4/Stats"]
-offset_left = 8.981911
-offset_top = 26.507637
-offset_right = 353.0837
-offset_bottom = 218.50763
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "00:00"
-horizontal_alignment = 2
-
-[node name="TimeIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/4/Stats"]
-position = Vector2(4.6004868, 31.98442)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("8_td6mg")
-
-[node name="Coins" type="Label" parent="MainMenuLayer/LevelsMenu/4/Stats"]
-offset_left = 7.229347
-offset_top = 37.242134
-offset_right = 381.22934
-offset_bottom = 229.24213
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "0/0"
-horizontal_alignment = 2
-
-[node name="CoinsIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/4/Stats"]
-position = Vector2(3.724205, 42.499847)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("9_guify")
-
-[node name="5" type="Button" parent="MainMenuLayer/LevelsMenu"]
+[node name="5" parent="MainMenuLayer/LevelsMenu" instance=ExtResource("6_td6mg")]
 layout_mode = 0
-offset_left = 1096.9999
+offset_left = 1099.0
 offset_top = 324.0
-offset_right = 1126.1339
+offset_right = 1128.134
 offset_bottom = 372.4148
-scale = Vector2(4.5647225, 4.5647225)
-theme = ExtResource("2_4hy44")
 icon = ExtResource("10_g7jxm")
-icon_alignment = 1
-vertical_icon_alignment = 0
-script = ExtResource("5_iqepy")
 
-[node name="Stats" type="Node2D" parent="MainMenuLayer/LevelsMenu/5"]
-visible = false
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Time" type="Label" parent="MainMenuLayer/LevelsMenu/5/Stats"]
-offset_left = 8.981911
-offset_top = 26.507637
-offset_right = 353.0837
-offset_bottom = 218.50763
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "00:00"
-horizontal_alignment = 2
-
-[node name="TimeIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/5/Stats"]
-position = Vector2(4.6004868, 31.98442)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("8_td6mg")
-
-[node name="Coins" type="Label" parent="MainMenuLayer/LevelsMenu/5/Stats"]
-offset_left = 7.229347
-offset_top = 37.242134
-offset_right = 381.22934
-offset_bottom = 229.24213
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "0/0"
-horizontal_alignment = 2
-
-[node name="CoinsIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/5/Stats"]
-position = Vector2(3.724205, 42.499847)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("9_guify")
-
-[node name="6" type="Button" parent="MainMenuLayer/LevelsMenu"]
+[node name="6" parent="MainMenuLayer/LevelsMenu" instance=ExtResource("6_td6mg")]
 layout_mode = 0
-offset_left = 1240.9999
+offset_left = 1244.0
 offset_top = 324.0
-offset_right = 1270.1339
+offset_right = 1273.134
 offset_bottom = 372.4148
-scale = Vector2(4.5647225, 4.5647225)
-theme = ExtResource("2_4hy44")
 icon = ExtResource("11_jspdm")
-icon_alignment = 1
-vertical_icon_alignment = 0
-script = ExtResource("5_iqepy")
-
-[node name="Stats" type="Node2D" parent="MainMenuLayer/LevelsMenu/6"]
-visible = false
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Time" type="Label" parent="MainMenuLayer/LevelsMenu/6/Stats"]
-offset_left = 8.981911
-offset_top = 26.507637
-offset_right = 353.0837
-offset_bottom = 218.50763
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "00:00"
-horizontal_alignment = 2
-
-[node name="TimeIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/6/Stats"]
-position = Vector2(4.6004868, 31.98442)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("8_td6mg")
-
-[node name="Coins" type="Label" parent="MainMenuLayer/LevelsMenu/6/Stats"]
-offset_left = 7.229347
-offset_top = 37.242134
-offset_right = 381.22934
-offset_bottom = 229.24213
-scale = Vector2(0.056340612, 0.056340612)
-theme = ExtResource("2_4hy44")
-theme_override_font_sizes/font_size = 140
-text = "0/0"
-horizontal_alignment = 2
-
-[node name="CoinsIcon" type="Sprite2D" parent="MainMenuLayer/LevelsMenu/6/Stats"]
-position = Vector2(3.724205, 42.499847)
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("9_guify")
 
 [node name="Back" type="Button" parent="MainMenuLayer/LevelsMenu" node_paths=PackedStringArray("loads", "unloads")]
 layout_mode = 0

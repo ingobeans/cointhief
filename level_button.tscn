@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://fw5uaqqoj61m"]
+
+[ext_resource type="Theme" uid="uid://cxuujxb3yf2ph" path="res://theme.tres" id="1_k1cd6"]
+[ext_resource type="Texture2D" uid="uid://3s37crb4p7ky" path="res://assets/ui/1.ase" id="2_14dx4"]
+[ext_resource type="Script" uid="uid://b2rjr71s1mixk" path="res://level_button.gd" id="3_vc1hx"]
+[ext_resource type="Texture2D" uid="uid://bg6xp3uvn38dn" path="res://assets/ui/timer.ase" id="4_6xanl"]
+[ext_resource type="Texture2D" uid="uid://ckubvpsx3elxt" path="res://assets/ui/coins.ase" id="5_0hl1l"]
+
+[node name="LevelButton" type="Button"]
+offset_right = 29.133972
+offset_bottom = 48.414795
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("1_k1cd6")
+icon = ExtResource("2_14dx4")
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("3_vc1hx")
+
+[node name="Stats" type="Node2D" parent="."]
+visible = false
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="TimeIcon" type="Sprite2D" parent="Stats"]
+position = Vector2(3.8, 31.445776)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("4_6xanl")
+
+[node name="Coins" type="Label" parent="Stats"]
+offset_left = 7.379
+offset_top = 37.242134
+offset_right = 381.379
+offset_bottom = 229.24213
+scale = Vector2(0.056340612, 0.056340612)
+theme = ExtResource("1_k1cd6")
+theme_override_font_sizes/font_size = 140
+text = "0/0"
+horizontal_alignment = 2
+
+[node name="Time" type="Label" parent="Stats"]
+offset_left = 7.379
+offset_top = 26.726704
+offset_right = 381.379
+offset_bottom = 218.7267
+scale = Vector2(0.056340612, 0.056340612)
+theme = ExtResource("1_k1cd6")
+theme_override_font_sizes/font_size = 140
+text = "00:00"
+horizontal_alignment = 2
+
+[node name="CoinsIcon" type="Sprite2D" parent="Stats"]
+position = Vector2(3.8, 41.961205)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("5_0hl1l")
