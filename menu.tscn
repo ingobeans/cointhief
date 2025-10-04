@@ -41,7 +41,6 @@ scale = Vector2(6.824735, 6.824735)
 texture = ExtResource("1_ouk20")
 
 [node name="MainMenu" type="Control" parent="MainMenuLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 
@@ -71,6 +70,7 @@ script = ExtResource("4_iqepy")
 loads = [NodePath("../../../Options")]
 
 [node name="LevelsMenu" type="Control" parent="MainMenuLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
