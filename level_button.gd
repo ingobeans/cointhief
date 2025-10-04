@@ -6,8 +6,8 @@ func reload_state():
 	if name == "1":
 		return
 	var prev_level = str(int(name) - 1)
-	var value = config.config.get_value("levels",prev_level,"no")
-	disabled = value != "completed"
+	var value = config.config.get_value("levels",prev_level)
+	disabled = value == null
 		
 
 func _ready() -> void:

@@ -6,6 +6,8 @@ var friction = 0.05
 var gravity = 600.0
 var jump_force = 200.0
 
+var coins = 0
+
 # had to temporarily disable this to nerf
 # slide-jumping :/
 var slide_speed_multiplier = 300.0 * 0.0

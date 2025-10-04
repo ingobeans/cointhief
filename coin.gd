@@ -13,4 +13,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		visible = false
 		taken = true
 		body.speed_boost = body.boost_on_pickup
+		body.coins += 1
 	
