@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 		var level_name = get_parent().get_parent().get_child(0).name.trim_prefix("Level")
 		config.config.set_value("levels",level_name,
 		{
-			"time": str(Time.get_ticks_msec() - start),
+			"time": Time.get_ticks_msec() - start,
 			"coins": get_node("../Player").coins,
 			"max_coins": get_max_coins()
 		})
