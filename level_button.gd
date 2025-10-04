@@ -20,7 +20,6 @@ func reload_state():
 		
 
 func _ready() -> void:
-	print(name)
 	reload_state()
 	visibility_changed.connect(reload_state)
 
