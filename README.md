@@ -1,7 +1,8 @@
 # cointhief!!!
 <sup>a game for hackclub's siege</sup>
 
-<img width="1070" height="452" alt="Screenshot 2025-09-30 212807" src="https://github.com/user-attachments/assets/9628b83f-fa36-46c2-bdc1-9bd02b4515b6" />
+<img height="400" alt="Screenshot 2025-10-05 195913" src="https://github.com/user-attachments/assets/0311598b-cb13-4242-ba53-a2af2f3b317b" />
+
 
 you're a goblin in a velocity based platformer. theres currently 5 levels.
 
