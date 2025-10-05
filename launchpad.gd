@@ -14,7 +14,6 @@ func _process(_delta: float) -> void:
 			player_jumped = true
 			audio_player.pitch_scale = 1.0 + randf()*pitch_variation-pitch_variation/2.0
 			audio_player.play()
-			print("jump!")
 			bodies[0].velocity.y -= force
 	
 
