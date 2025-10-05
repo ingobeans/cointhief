@@ -56,9 +56,7 @@ func _physics_process(delta: float) -> void:
 	elif attacking <= attack_length / 2.0 and !attacking_damage_done:
 		attacking_damage_done = true
 		var colliding = damage_area.get_overlapping_bodies()
-		print(colliding)
 		if len(colliding) > 0:
-			print("hit ",colliding[0])
 			colliding[0].velocity.x = lerp(colliding[0].velocity.x,0.0,0.3)
 			colliding[0].velocity.x += player_delta.normalized().x * hit_force
 			if colliding[0].position.y+8.0 >= position.y:

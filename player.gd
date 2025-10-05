@@ -21,6 +21,8 @@ var velocity_on_speed_boost_start = 15.0
 var sliding = false
 var fall_distance = 0.0
 
+var on_launchpad = false
+
 func _physics_process(delta: float) -> void:
 	var on_floor = is_on_floor()
 	var move_dir = Input.get_axis("left","right")
@@ -81,13 +83,13 @@ func _physics_process(delta: float) -> void:
 				fall_distance = 0.0
 		velocity.x = lerp(velocity.x,0.0,current_friction)
 		
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") and !on_launchpad:
 			var force = -jump_force
 			if sliding:
 				force *= min(abs(velocity.x) / 200.0,1.65)
 				if abs(velocity.x)  < 20.0:
 					force = 0.0
-			velocity.y = force
+			velocity.y = min(force,velocity.y)
 	else:
 		fall_distance += delta
 		
