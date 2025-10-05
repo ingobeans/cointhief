@@ -20,6 +20,8 @@ func _process(_delta: float) -> void:
 		var should_overwrite = old == null
 		var time = Time.get_ticks_msec() - start
 		
+		var max_coins = get_max_coins()
+		var coins = get_node("../Player").coins
 		if old != null:
 			if typeof(old) != typeof({}):
 				should_overwrite = true
@@ -33,8 +35,8 @@ func _process(_delta: float) -> void:
 			config.config.set_value("levels",level_name,
 			{
 				"time": time,
-				"coins": get_node("../Player").coins,
-				"max_coins": get_max_coins()
+				"coins": coins,
+				"max_coins": max_coins
 			})
 			config.save()
-		get_parent().get_parent().return_to_menu()
+		get_parent().get_parent().return_to_menu(time,coins,max_coins,should_overwrite)

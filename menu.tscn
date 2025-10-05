@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dovt0vs2guhrf"]
+[gd_scene load_steps=25 format=3 uid="uid://dovt0vs2guhrf"]
 
 [ext_resource type="Script" uid="uid://7rji7va6hfdl" path="res://active_level.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://qtbc5esofv0n" path="res://assets/logo.ase" id="1_ouk20"]
@@ -19,7 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://bnvbhmwmv5mi3" path="res://assets/ui/volume.ase" id="16_4ndjb"]
 [ext_resource type="Script" uid="uid://bjvkauawxof7s" path="res://restart.gd" id="16_td6mg"]
 [ext_resource type="Script" uid="uid://dsjnhh3mmah8u" path="res://volume_slider.gd" id="17_3ls4m"]
+[ext_resource type="Texture2D" uid="uid://b4x4g6vsftlab" path="res://assets/ui/level_complete.ase" id="17_td6mg"]
 [ext_resource type="AudioStream" uid="uid://bu1ljklno025a" path="res://assets/coin.wav" id="18_5h80m"]
+[ext_resource type="Texture2D" uid="uid://bg6xp3uvn38dn" path="res://assets/ui/timer.ase" id="18_oil5j"]
+[ext_resource type="Texture2D" uid="uid://ckubvpsx3elxt" path="res://assets/ui/coins.ase" id="19_8uog0"]
 
 [sub_resource type="GDScript" id="GDScript_4ndjb"]
 script/source = "extends Button
@@ -195,6 +198,69 @@ theme = ExtResource("2_4hy44")
 icon = ExtResource("15_w25hu")
 icon_alignment = 1
 script = ExtResource("16_td6mg")
+
+[node name="LevelCompleteScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="LevelCompleteScreen"]
+offset_left = 428.0
+offset_top = 23.0
+offset_right = 1458.0
+offset_bottom = 925.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="LevelCompleteScreen"]
+offset_left = 537.0
+offset_top = 205.0
+offset_right = 1346.0
+offset_bottom = 870.0
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="Back" type="Button" parent="LevelCompleteScreen" node_paths=PackedStringArray("unloads")]
+offset_left = 816.3414
+offset_top = 755.64734
+offset_right = 868.3414
+offset_bottom = 777.64734
+scale = Vector2(4.5647225, 4.5647225)
+theme = ExtResource("2_4hy44")
+icon = ExtResource("10_h1wq0")
+script = ExtResource("4_iqepy")
+unloads = [NodePath("..")]
+
+[node name="LevelComplete" type="Sprite2D" parent="LevelCompleteScreen"]
+position = Vector2(976.00006, 271)
+scale = Vector2(5, 5)
+texture = ExtResource("17_td6mg")
+
+[node name="TimeIcon" type="Sprite2D" parent="LevelCompleteScreen"]
+position = Vector2(620.4371, 402.71906)
+scale = Vector2(8.763792, 8.763792)
+texture = ExtResource("18_oil5j")
+
+[node name="Time" type="Label" parent="LevelCompleteScreen"]
+offset_left = 673.99994
+offset_top = 371.0
+offset_right = 1949.9302
+offset_bottom = 563.0
+scale = Vector2(0.32624102, 0.32624102)
+theme = ExtResource("2_4hy44")
+theme_override_font_sizes/font_size = 140
+text = "00.00 (Best: 00.00)"
+
+[node name="Coins" type="Label" parent="LevelCompleteScreen"]
+offset_left = 673.99994
+offset_top = 494.0
+offset_right = 1949.9302
+offset_bottom = 686.0
+scale = Vector2(0.32624105, 0.32624105)
+theme = ExtResource("2_4hy44")
+theme_override_font_sizes/font_size = 140
+text = "00/00"
+
+[node name="CoinsIcon" type="Sprite2D" parent="LevelCompleteScreen"]
+position = Vector2(635, 525.414)
+scale = Vector2(8.763792, 8.763792)
+texture = ExtResource("19_8uog0")
 
 [node name="Options" type="CanvasLayer" parent="."]
 visible = false
