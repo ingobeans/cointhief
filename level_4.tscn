@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=4 uid="uid://bdwtfomnn6ewf"]
+[gd_scene load_steps=131 format=4 uid="uid://bdwtfomnn6ewf"]
 
 [ext_resource type="Script" uid="uid://dng5rafae843g" path="res://coin_map.gd" id="1_0yqnl"]
 [ext_resource type="PackedScene" uid="uid://btxxx5klwlie3" path="res://finish_line.tscn" id="2_45t7y"]
@@ -20,7 +20,7 @@
 [sub_resource type="Curve2D" id="Curve2D_1pe0h"]
 bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -93, 112, 0, 0, 0, 0, -49, 110, 0, 0, 0, 0, 1191, 204, 0, 0, 0, 0, 1228, 225, 0, 0, 0, 0, 1256, 239, 0, 0, 0, 0, 1466, 211, 0, 0, 0, 0, 1502, 204, 0, 0, 0, 0, 1549, 197, 0, 0, 0, 0, 2165, 33, 0, 0, 0, 0, 2265, 30, 0, 0, 0, 0, 2446, 110, 0, 0, 0, 0, 2817, 111, 0, 0, 0, 0, 2883, 111, 0, 0, 0, 0, 2938, 111, 0, 0, 0, 0, 3489, -13, 0, 0, 0, 0, 3514, -94, 0, 0, 0, 0, 3581, -155, 0, 0, 0, 0, 3623, -173, 0, 0, 0, 0, 3688, -178, 0, 0, 0, 0, 3790, -134, 0, 0, 0, 0, 4341, 16, 0, 0, 0, 0, 4404, 49, 0, 0, 0, 0, 4478, 88, 0, 0, 0, 0, 4585, 143, 0, 0, 0, 0, 4688, 92, 0, 0, 0, 0, 4812, 71, 0, 0, 0, 0, 4942, 87, 0, 0, 0, 0, 5100, 147, 0, 0, 0, 0, 5743, 13, 0, 0, 0, 0, 5781, 13, 0, 0, 0, 0, 5833, 13)
+"points": PackedVector2Array(0, 0, 0, 0, -93, 112, 0, 0, 0, 0, -49, 110, 0, 0, 0, 0, 1191, 207, 0, 0, 0, 0, 1228, 225, 0, 0, 0, 0, 1256, 239, 0, 0, 0, 0, 1466, 211, 0, 0, 0, 0, 1502, 204, 0, 0, 0, 0, 1549, 197, 0, 0, 0, 0, 2165, 33, 0, 0, 0, 0, 2265, 30, 0, 0, 0, 0, 2446, 110, 0, 0, 0, 0, 2817, 111, 0, 0, 0, 0, 2883, 111, 0, 0, 0, 0, 2938, 111, 0, 0, 0, 0, 3489, -13, 0, 0, 0, 0, 3514, -94, 0, 0, 0, 0, 3581, -155, 0, 0, 0, 0, 3623, -173, 0, 0, 0, 0, 3688, -178, 0, 0, 0, 0, 3790, -134, 0, 0, 0, 0, 4341, 16, 0, 0, 0, 0, 4404, 49, 0, 0, 0, 0, 4478, 88, 0, 0, 0, 0, 4585, 143, 0, 0, 0, 0, 4688, 92, 0, 0, 0, 0, 4812, 71, 0, 0, 0, 0, 4942, 87, 0, 0, 0, 0, 5100, 147, 0, 0, 0, 0, 5743, 13, 0, 0, 0, 0, 5781, 13, 0, 0, 0, 0, 5833, 13)
 }
 point_count = 31
 
@@ -84,6 +84,10 @@ position = Vector2(5292.141, 161.25003)
 script = ExtResource("8_pkey3")
 position = Vector2(5861.809, 163.91199)
 
+[sub_resource type="Resource" id="Resource_dn8ih"]
+script = ExtResource("8_pkey3")
+position = Vector2(3528.0007, -451.46716)
+
 [sub_resource type="Resource" id="Resource_5mhqw"]
 script = ExtResource("9_s4mws")
 _points = {
@@ -101,9 +105,10 @@ _points = {
 11: SubResource("Resource_g1hy3"),
 12: SubResource("Resource_wvkp3"),
 13: SubResource("Resource_sfuar"),
-14: SubResource("Resource_iiw7h")
+14: SubResource("Resource_iiw7h"),
+15: SubResource("Resource_dn8ih")
 }
-_point_order = PackedInt32Array(0, 1, 10, 11, 13, 14, 12, 2, 3, 9, 8, 7, 6, 5, 4)
+_point_order = PackedInt32Array(0, 15, 1, 10, 11, 13, 14, 12, 2, 3, 9, 8, 7, 6, 5, 4)
 _constraints = {
 Vector2i(0, 4): 15
 }

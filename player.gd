@@ -56,11 +56,15 @@ func _physics_process(delta: float) -> void:
 	
 	if sliding:
 		$Sprite.animation = "slide"
+		$CollisionShape2D.shape.size.y = 7.5
+		$CollisionShape2D.position.y = 0.5 + 7.5/2.0
 		if on_floor:
 			$Sprite.rotation = atan2(normal.y,normal.x)+PI/2.0
 	else:
 		$Sprite.animation = "sprint" if abs(velocity.x) > 90.0 else "idle"
 		$Sprite.rotation = 0.0
+		$CollisionShape2D.shape.size.y = 15
+		$CollisionShape2D.position.y = 0.5
 	
 	var allow_move = false
 	if velocity.x < -current_max_speed:

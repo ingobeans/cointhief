@@ -73,7 +73,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0t63x"]
-size = Vector2(13, 13)
+size = Vector2(13, 20)
 
 [node name="Coin" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_xcrr1")
@@ -89,7 +89,7 @@ stream = ExtResource("3_v7riw")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 0.5)
+position = Vector2(0.5, 4)
 shape = SubResource("RectangleShape2D_0t63x")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
