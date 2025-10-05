@@ -3,11 +3,14 @@
 
 <img width="1070" height="452" alt="Screenshot 2025-09-30 212807" src="https://github.com/user-attachments/assets/9628b83f-fa36-46c2-bdc1-9bd02b4515b6" />
 
-you are a goblin. go thief coins!
+you're a goblin in a velocity based platformer. theres currently 5 levels.
 
-this is a little 2d velocity based platformer im working on! made in godot, so thats pretty neat :>
+use sliding, jumping, launchpads and coins to gain speed!
 
-as with all my other games, i make all the assets and code myself !
+
+made in godot, so thats pretty neat :>
+
+and as with all my other games, i make all the assets and code myself !
 
 ## Controls!!
 
