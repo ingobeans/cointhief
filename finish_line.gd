@@ -21,11 +21,14 @@ func _process(_delta: float) -> void:
 		var time = Time.get_ticks_msec() - start
 		
 		if old != null:
-			var old_time = old["time"]
-			if old_time == null:
+			if typeof(old) != typeof({}):
 				should_overwrite = true
 			else:
-				should_overwrite = old_time > time
+				var old_time = old["time"]
+				if old_time == null:
+					should_overwrite = true
+				else:
+					should_overwrite = old_time > time
 		if should_overwrite:
 			config.config.set_value("levels",level_name,
 			{

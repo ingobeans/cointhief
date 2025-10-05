@@ -7,8 +7,9 @@ func round_to_dec(num, digit):
 
 func reload_state():
 	var current_level_stats = config.config.get_value("levels",name)
-	$Stats.visible = current_level_stats != null
-	if current_level_stats != null:
+	var level_has_stats = current_level_stats != null and typeof(current_level_stats) == typeof({})
+	$Stats.visible = level_has_stats
+	if level_has_stats:
 		$Stats/Coins.text = str(current_level_stats["coins"]) + "/" + str(current_level_stats["max_coins"])
 		$Stats/Time.text = str(round_to_dec(current_level_stats["time"] / 1000,2))
 	
@@ -16,7 +17,7 @@ func reload_state():
 		return
 	var prev_level = str(int(name) - 1)
 	var value = config.config.get_value("levels",prev_level)
-	disabled = value == null
+	disabled = value == null or typeof(value) != typeof({})
 		
 
 func _ready() -> void:
