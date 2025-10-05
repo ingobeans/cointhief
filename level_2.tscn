@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://da7pfbxucgyvw"]
+[gd_scene load_steps=46 format=4 uid="uid://da7pfbxucgyvw"]
 
 [ext_resource type="Script" uid="uid://dng5rafae843g" path="res://coin_map.gd" id="1_jcnlr"]
 [ext_resource type="PackedScene" uid="uid://ckjavjv4puni6" path="res://hut.tscn" id="2_5kfcu"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dbdpfhoglb1c8" path="res://assets/ground_background.ase" id="11_i6smf"]
 [ext_resource type="Texture2D" uid="uid://cb6euhr2lgw2n" path="res://assets/ground_edge.ase" id="12_d4rhq"]
 [ext_resource type="Resource" uid="uid://bygate8g4nqa1" path="res://ground_material.tres" id="13_5hnhx"]
+[ext_resource type="Texture2D" uid="uid://blv3bkh321tuu" path="res://assets/ui/slide.ase" id="16_78pok"]
 [ext_resource type="PackedScene" uid="uid://c6m7sk3kvxx4i" path="res://player.tscn" id="17_e6ygx"]
 [ext_resource type="PackedScene" uid="uid://dbqlgt1kcctbh" path="res://knight.tscn" id="18_xlxjt"]
 
@@ -254,6 +255,11 @@ visible = false
 polygon = PackedVector2Array(202.97647, 48.70957, 322.66748, 67.35971, 432.83527, 137.8276, 872.83844, 401.6155, 1219.9515, 403.08334, 1226.237, 398.5357, 1225.7529, 337.02658, 1966.5173, 333.605, 2076.3918, 300.41977, 2539.86, 299.381, 2540.4253, 378.45703, 2549, 395, 3388.5933, 778.74176, 3414.2354, 778.9789, 3415.998, 724.47534, 4075.5308, 722.24365, 4099.4297, 737.05774, 4105.357, 1710.2782, 3139.873, 1711.8035, -1021.922, 634.2204, -990.4176, 39.73642)
 
 [node name="Player" parent="." instance=ExtResource("17_e6ygx")]
+position = Vector2(-3, 40)
 
 [node name="Knight2" parent="." instance=ExtResource("18_xlxjt")]
 position = Vector2(2201, 289)
+
+[node name="Slide" type="Sprite2D" parent="."]
+position = Vector2(64, 5)
+texture = ExtResource("16_78pok")

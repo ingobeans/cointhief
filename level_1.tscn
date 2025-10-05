@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bag4re4t62vha"]
+[gd_scene load_steps=51 format=4 uid="uid://bag4re4t62vha"]
 
 [ext_resource type="PackedScene" uid="uid://c6m7sk3kvxx4i" path="res://player.tscn" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_5hph3"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bwx82gcchgr30" path="res://assets/spike_edge.ase" id="17_3qmij"]
 [ext_resource type="PackedScene" uid="uid://dbqlgt1kcctbh" path="res://knight.tscn" id="17_lhbbi"]
 [ext_resource type="Resource" uid="uid://ewxp2ogd7yic" path="res://spikes.tres" id="18_kb5eu"]
+[ext_resource type="Texture2D" uid="uid://cqaaa3vesfmfm" path="res://assets/ui/wasd.ase" id="19_00ld1"]
 
 [sub_resource type="Curve2D" id="Curve2D_1pe0h"]
 bake_interval = 512.0
@@ -256,6 +257,7 @@ visible = false
 polygon = PackedVector2Array(-531.6918, 1114.5149, -491.15942, 36.51541, 152.9125, 36.813507, 193.95427, 14.600769, 422.36935, 13.760391, 662, 94.19998, 1226.94, 94.819824, 1226.4745, 157.7557, 1277.1212, 157.64336, 1278.085, 93.783104, 1924.2783, 91.95398, 2736.4644, 93.3815, 2753.4116, 1073.9468)
 
 [node name="Player" parent="." instance=ExtResource("1_3hls8")]
+position = Vector2(-5, 29)
 
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(-252, -41)
@@ -292,3 +294,7 @@ metadata/_custom_type_script = "uid://c6kxvfqr4ewu1"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes"]
 visible = false
 polygon = PackedVector2Array(1176.4893, -72.838715, 1279.1208, -72.838715, 1278.6968, -24.06749, 1175.2169, -25.339783)
+
+[node name="Wasd" type="Sprite2D" parent="."]
+position = Vector2(40, 4)
+texture = ExtResource("19_00ld1")
