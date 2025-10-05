@@ -6,7 +6,7 @@
 
 you're a goblin in a velocity based platformer. theres currently 5 levels.
 
-use sliding, jumping, launchpads and coins to gain speed!
+use sliding, jumping, launchpads and coins to gain speed! complete a level by reaching the finish line at the end. you can speedrun levels, trying to get the best possible time, if thats your kind of thing !
 
 
 made in godot, so thats pretty neat :>
