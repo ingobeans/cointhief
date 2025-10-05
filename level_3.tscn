@@ -23,6 +23,11 @@ _data = {
 }
 point_count = 19
 
+[sub_resource type="Resource" id="Resource_dhf26"]
+script = ExtResource("8_4hpui")
+position = Vector2(-628.4847, -373.14597)
+texture_idx = -2
+
 [sub_resource type="Resource" id="Resource_4p6gt"]
 script = ExtResource("8_4hpui")
 position = Vector2(35.9151, -836.07263)
@@ -73,11 +78,6 @@ script = ExtResource("8_4hpui")
 position = Vector2(-601.0122, -345.55875)
 
 [sub_resource type="Resource" id="Resource_4hpui"]
-script = ExtResource("8_4hpui")
-position = Vector2(-628.4847, -373.14597)
-texture_idx = -2
-
-[sub_resource type="Resource" id="Resource_dhf26"]
 script = ExtResource("8_4hpui")
 position = Vector2(-628.4847, -373.14597)
 texture_idx = -2
@@ -261,9 +261,6 @@ mesh = SubResource("ArrayMesh_x8t0u")
 curve = SubResource("Curve2D_1pe0h")
 script = ExtResource("1_g0tlw")
 
-[node name="FinishLine" parent="." instance=ExtResource("6_ra6nl")]
-position = Vector2(4000, 723)
-
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(-109, 4)
 texture = ExtResource("4_m8gss")
@@ -331,5 +328,5 @@ position = Vector2(-424, -356)
 [node name="Knight3" parent="." instance=ExtResource("13_ghrvs")]
 position = Vector2(-750, -383)
 
-[node name="FinishLine2" parent="." instance=ExtResource("6_ra6nl")]
+[node name="FinishLine" parent="." instance=ExtResource("6_ra6nl")]
 position = Vector2(1900, -341)
