@@ -144,9 +144,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="Resume" type="Button" parent="PauseMenu" node_paths=PackedStringArray("unloads")]
 offset_left = 699.0
-offset_top = 756.28235
+offset_top = 713.28235
 offset_right = 809.0
-offset_bottom = 778.28235
+offset_bottom = 735.28235
 scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("13_oxnod")
@@ -156,9 +156,9 @@ unloads = [NodePath("..")]
 
 [node name="BackToMenu" type="Button" parent="PauseMenu" node_paths=PackedStringArray("loads", "unloads")]
 offset_left = 699.0
-offset_top = 641.12946
+offset_top = 598.12946
 offset_right = 809.0
-offset_bottom = 663.12946
+offset_bottom = 620.12946
 scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("14_gd0jp")
@@ -169,9 +169,9 @@ unloads = [NodePath("..")]
 
 [node name="Options" type="Button" parent="PauseMenu" node_paths=PackedStringArray("loads")]
 offset_left = 699.0
-offset_top = 524.0
+offset_top = 481.0
 offset_right = 809.0
-offset_bottom = 546.0
+offset_bottom = 503.0
 scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("16_3ls4m")
@@ -181,9 +181,9 @@ loads = [NodePath("../../Options")]
 
 [node name="Restart" type="Button" parent="PauseMenu"]
 offset_left = 699.0
-offset_top = 409.0
+offset_top = 366.0
 offset_right = 809.0
-offset_bottom = 431.0
+offset_bottom = 388.0
 scale = Vector2(4.5647225, 4.5647225)
 theme = ExtResource("2_4hy44")
 icon = ExtResource("15_w25hu")
